@@ -1,42 +1,117 @@
 .upload-form {
-    background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
-    border: 1px solid #dedede;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     margin: 0 auto;
     max-width: 450px;
-    padding: 30px 50px;
-    padding-top:50px;
+    padding: 15px 50px;
+    padding-top:10px;
     text-align: center;
     cursor: pointer;
     border-radius: 10%
   }
   
   input {
-    border: 1px solid #d9d9d9;
+    border: 1px solid #181D31;
     box-sizing: border-box;
     padding: 10px;
     width: 100%;
-    font-weight: bold;
     
   }
+
+  textarea{
+    border: 1px solid #181D31;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+  }
   
-  label {
+  .normal-label {
     font-weight: bold;
-    color: white;
-    display: block;
+    color: #181D31;
+    text-align: left;
     font-family: sans-serif;
     font-size: 14px;
     font-weight: 600;
-    margin-bottom: 5px;
-    
+    margin:10px; 
+  }
+
+  button[type = "button"]{
+    background-color: #181D31;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  input[type=file] {
+    border: none;
   }
   
-  .upload{
-    background-color: #6976d9;
-    color: white;
-    font-family: sans-serif;
+  input[type=file]::file-selector-button {
+    margin-right: 20px;
+    margin-top: 10px;
+    background: #181D31;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+  }
+
+  .button_slide {
+    color: #FFF;
+    border-radius: 0px;
+    padding: 18px 36px;
+    display: inline-block;
     font-size: 14px;
-    margin: 20px 0px;
-  } 
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #263159;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+  }
+  
+  
+  .slide_right:hover {
+    box-shadow: inset 400px 0 0 0 #263159;
+  }
+
+  .drop-container {
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    height: 150px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px dashed #555;
+    color: #444;
+    cursor: pointer;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+  }
+  
+  .drop-container:hover {
+    background: #eee;
+    border-color: #111;
+  }
+  
+  .drop-container:hover .drop-title {
+    color: #222;
+  }
+  
+  .drop-title {
+    color: #444;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    transition: color .2s ease-in-out;
+  }
+
+ 
