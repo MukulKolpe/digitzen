@@ -1,17 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect, Fragment } from "react";
 import { Link } from "react-router-dom";
-import { useSmartAccountContext } from "../contexts/SmartAccountContext";
-import { useWeb3AuthContext } from "../contexts/SocialLoginContext";
-
+import { useSmartAccountContext } from "../../contexts/SmartAccountContext";
+import { useWeb3AuthContext } from "../../contexts/SocialLoginContext";
+import { motion } from "framer-motion";
 export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const {address,loading: eoaLoading,userInfo,connect,disconnect,getUserInfo,} = useWeb3AuthContext();
-  const { selectedAccount,loading: scwLoading,setSelectedAccount,} = useSmartAccountContext();
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const {
+    address,
+    loading: eoaLoading,
+    userInfo,
+    connect,
+    disconnect,
+    getUserInfo,
+  } = useWeb3AuthContext();
+  const {
+    selectedAccount,
+    loading: scwLoading,
+    setSelectedAccount,
+  } = useSmartAccountContext();
 
-  if(!address){
-    console.log("user not signed in")
-  }
-  else{
+  if (!address) {
+    console.log("user not signed in");
+  } else {
     console.log("User Signed in");
   }
   return (
@@ -55,50 +66,57 @@ export const Nav = () => {
               </Link>
             </li>
             <li>
-              <Link
-                to="/upload"
-                aria-label="Our product"
-                title="Our product"
-                class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                Upload Documents
-              </Link>
+              {!address && (
+                <li>
+                  <Link
+                    to="/login"
+                    aria-label="Our product"
+                    title="Our product"
+                    class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                  >
+                    Login
+                  </Link>
+                </li>
+              )}
             </li>
             <li>
-              <Link
-                to="/view"
-                aria-label="Product pricing"
-                title="Product pricing"
-                class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                View Documents
-              </Link>
+              {address && userInfo && (
+                <ul class="flex items-center hidden space-x-8 lg:flex">
+                  <li>
+                    <Link
+                      to="/upload"
+                      aria-label="Our product"
+                      title="Our product"
+                      class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                    >
+                      Upload Documents
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/view"
+                      aria-label="Product pricing"
+                      title="Product pricing"
+                      class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                    >
+                      View Documents
+                    </Link>
+                  </li>
+
+                  <li>
+                    <motion.img
+                      style={{ cursor: "pointer" }}
+                      whileTap={{ scale: 0.98 }}
+                      src={userInfo.profileImage}
+                      className="w-10 min-w-[40px] h-10 min-h-[40px] shadow-2xl rounded-full object-contain"
+                      alt="Profile"
+                    />
+                  </li>
+                </ul>
+              )}
             </li>
-            {!address && (
-              <li>
-                <Link
-                  to="/login"
-                  aria-label="Our product"
-                  title="Our product"
-                  class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-                >
-                  Login
-                </Link>
-            </li>
-            )}
-            {address && (
-              <li>
-                <Link
-                  to="/login"
-                  aria-label="Our product"
-                  title="Our product"
-                  class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-                >
-                  Logout
-                </Link>
-            </li>
-            )}
           </ul>
+
           <div class="lg:hidden">
             <button
               aria-label="Open Menu"

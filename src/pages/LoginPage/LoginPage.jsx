@@ -3,10 +3,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import { useSmartAccountContext } from "../../contexts/SmartAccountContext";
 import { useWeb3AuthContext } from "../../contexts/SocialLoginContext";
 import Button from "../../components/Button";
+import { useNavigate } from "react-router-dom";
 
 import "./LoginPage.css";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const classes = useStyles();
 
   const {
@@ -29,7 +31,11 @@ const LoginPage = () => {
     React.createElement(
       "main",
       { className: classes.container },
-      React.createElement("h1", null, "Please sign in to upload your documents"),
+      React.createElement(
+        "h1",
+        null,
+        "Please sign in to upload your documents"
+      ),
       React.createElement(Button, {
         onClickFunc: !address
           ? connect
@@ -58,8 +64,8 @@ const LoginPage = () => {
         ),
       address &&
         React.createElement(Button, {
-          onClickFunc: () => getUserInfo(),
-          title: "View your profile",
+          onClickFunc: () => getUserInfo() && navigate("/upload"),
+          title: "Upload Documents",
         }),
       userInfo &&
         React.createElement(
