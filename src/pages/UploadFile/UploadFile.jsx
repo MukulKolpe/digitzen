@@ -39,7 +39,7 @@ const UploadFile = () => {
   };
   return (
     <form className="upload-form">
-      <label name="acc_add" className="acc_add">
+      <label name="acc_add" className="normal-label">
         Account Address
       </label>
       <input
@@ -47,7 +47,7 @@ const UploadFile = () => {
         className="acc_add"
         onChange={(e) => setAddress(e.target.value)}
       />
-      <label name="title" className="title">
+      <label name="title" className="normal-label">
         Title
       </label>
       <input
@@ -55,24 +55,27 @@ const UploadFile = () => {
         className="title"
         onChange={(e) => setTitle(e.target.value)}
       />
-      <label name="desc" className="desc">
+      <label name="desc" className="normal-label">
         Description
       </label>
-      <input
+      <textarea
         name="desc"
         className="desc"
         onChange={(e) => setDescription(e.target.value)}
       />
-      <label name="file" className="File">
-        Upload a File
-      </label>
-      <input
+      <label name="file" className="drop-container">
+      <span class="drop-title">Drop files here </span>
+
+       <br/><span class="drop-title">or</span>
+       <input
         type="file"
         className="upload"
         ref={inputRef}
         name="uploadImage"
       />
-      <button type="button"  onClick={onSubmit}>
+      </label>
+     
+      <button type="button"  onClick={onSubmit} className = "button_slide slide_right">
         Submit
       </button>
     </form>
