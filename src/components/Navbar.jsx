@@ -1,9 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSmartAccountContext } from "../contexts/SmartAccountContext";
+import { useWeb3AuthContext } from "../contexts/SocialLoginContext";
 
 export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const {address,loading: eoaLoading,userInfo,connect,disconnect,getUserInfo,} = useWeb3AuthContext();
+  const { selectedAccount,loading: scwLoading,setSelectedAccount,} = useSmartAccountContext();
 
+  if(!address){
+    console.log("user not signed in")
+  }
+  else{
+    console.log("User Signed in");
+  }
   return (
     <div class="bg-gray-900">
       <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -64,6 +74,30 @@ export const Nav = () => {
                 View Documents
               </Link>
             </li>
+            {!address && (
+              <li>
+                <Link
+                  to="/login"
+                  aria-label="Our product"
+                  title="Our product"
+                  class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                >
+                  Login
+                </Link>
+            </li>
+            )}
+            {address && (
+              <li>
+                <Link
+                  to="/login"
+                  aria-label="Our product"
+                  title="Our product"
+                  class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                >
+                  Logout
+                </Link>
+            </li>
+            )}
           </ul>
           <div class="lg:hidden">
             <button
