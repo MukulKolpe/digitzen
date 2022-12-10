@@ -5,6 +5,7 @@ import UploadFile from "./pages/UploadFile/UploadFile";
 import ViewFile from "./pages/ViewFile/ViewFile";
 import { Nav } from "./components/Navbar/Navbar";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/view" element={<ViewFile />} />
           <Route path="/login" element={<LoginPage />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );
