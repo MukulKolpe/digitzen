@@ -1,5 +1,7 @@
 import { React, useState, useRef } from "react";
 import "./UploadFile.css";
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css"
 
 const UploadFile = () => {
   const inputRef = useRef(null);
@@ -36,32 +38,22 @@ const UploadFile = () => {
         console.log(response);
       })
       .catch((err) => console.error(err));
+
+    toast.success("Document Uploaded Successfully", {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 3000,
+      theme: "dark",
+    });
   };
   return (
     <form className="upload-form">
       <label name="acc_add" className="normal-label">
-        Account Address
+        Wallet Address
       </label>
       <input
         name="acc_add"
         className="acc_add"
         onChange={(e) => setAddress(e.target.value)}
-      />
-      <label name="title" className="normal-label">
-        Title
-      </label>
-      <input
-        name="title"
-        className="title"
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <label name="desc" className="normal-label">
-        Description
-      </label>
-      <textarea
-        name="desc"
-        className="desc"
-        onChange={(e) => setDescription(e.target.value)}
       />
       <label name="file" className="drop-container">
       <span class="drop-title">Drop files here </span>
@@ -74,10 +66,28 @@ const UploadFile = () => {
         name="uploadImage"
       />
       </label>
+      <label name="title" className="normal-label">
+        Document Name
+      </label>
+      <input
+        name="title"
+        className="title"
+        onChange={(e) => setTitle(e.target.value)}
+      />
+      <label name="desc" className="normal-label">
+        Document Description
+      </label>
+      <textarea
+        name="desc"
+        className="desc"
+        onChange={(e) => setDescription(e.target.value)}
+      />
+      
      
       <button type="button"  onClick={onSubmit} className = "button_slide slide_right">
         Submit
       </button>
+      <ToastContainer />
     </form>
   );
 };
