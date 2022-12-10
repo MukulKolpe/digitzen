@@ -1,0 +1,23 @@
+.form{
+    width: 50%;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border: 1px solid #fff;
+}
+
+.input{
+    width:60%;
+}
+
+.button{
+    width: 30%;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    background-color: #181D31;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 1.5rem;
+    cursor: pointer;
+}
+
