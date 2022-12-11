@@ -6,6 +6,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { useSmartAccountContext } from "../../contexts/SmartAccountContext";
 import { useWeb3AuthContext } from "../../contexts/SocialLoginContext";
+import Card from "../../components/Card/Card"
 
 const ViewFile = () => {
   const [walletAddress, setWalletAddress] = useState("");
@@ -82,10 +83,14 @@ const ViewFile = () => {
           View
         </button>
         {nfts.map((nft) => (
-          <div>
-            <h5>{nft.metadata.description}</h5>
-            <img src={nft.file_url} />
-          </div>
+          <div className="w-100 grid grid-cols-2 md:grid-cols-1 py-4 mt-4 ml-0">
+          <Card 
+            title = {nft.metadata.name}
+            description = {nft.metadata.description}
+            imageUrl={nft.file_url}
+            contract_address={nft.metadata.contract_address}
+          />
+        </div>
         ))}
       </form>
       <ToastContainer />
