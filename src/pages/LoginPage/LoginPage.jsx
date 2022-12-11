@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { useSmartAccountContext } from "../../contexts/SmartAccountContext";
 import { useWeb3AuthContext } from "../../contexts/SocialLoginContext";
@@ -25,6 +25,7 @@ const LoginPage = () => {
     setSelectedAccount,
   } = useSmartAccountContext();
   console.log("address", address);
+
   return React.createElement(
     "div",
     { className: classes.bgCover },
@@ -62,6 +63,7 @@ const LoginPage = () => {
           React.createElement("h2", null, "Smart Account Address"),
           React.createElement("p", null, selectedAccount.smartAccountAddress)
         ),
+
       address &&
         React.createElement(Button, {
           onClickFunc: () => getUserInfo() && navigate("/upload"),

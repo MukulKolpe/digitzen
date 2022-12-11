@@ -10,7 +10,28 @@
     cursor: pointer;
     border-radius: 10%
   }
+  .header-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 450px;
+    padding: 15px 50px;
+    padding-top:10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10%
+  }
+  .saAdress {
+    border: 1px solid #181D31;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
   
+  }
   input {
     border: 1px solid #181D31;
     box-sizing: border-box;
@@ -114,4 +135,8 @@
     transition: color .2s ease-in-out;
   }
 
- 
+ .text-clipboard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ }
