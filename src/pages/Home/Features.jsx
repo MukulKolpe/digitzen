@@ -56,7 +56,7 @@ const Features = () => {
                   />
                 </svg>
               </div>
-              <p className="mb-2 font-bold">Football Events</p>
+              <p className="mb-2 font-bold">Maintains Identity Based Documents</p>
               <p className="text-sm leading-5 text-gray-900">
                 Sed ut perspiciatis unde omnis iste. Lorem ipsum dolor sit amet,
                 consectetur adipiscing elit.
@@ -81,7 +81,7 @@ const Features = () => {
                   />
                 </svg>
               </div>
-              <p className="mb-2 font-bold">Social Events</p>
+              <p className="mb-2 font-bold">Digital Identity Platform</p>
               <p className="text-sm leading-5 text-gray-900">
                 Disrupt inspire and think tank, social entrepreneur but
                 preliminary thinking think tank compelling.
@@ -106,7 +106,7 @@ const Features = () => {
                   />
                 </svg>
               </div>
-              <p className="mb-2 font-bold">Cultural Events</p>
+              <p className="mb-2 font-bold">Decentralized</p>
               <p className="text-sm leading-5 text-gray-900">
                 A slice of heaven. O for awesome, this chocka full cuzzie is as
                 rip-off as a cracker.
@@ -131,7 +131,7 @@ const Features = () => {
                   />
                 </svg>
               </div>
-              <p className="mb-2 font-bold">Tech Events</p>
+              <p className="mb-2 font-bold">Transparent</p>
               <p className="text-sm leading-5 text-gray-900">
                 Meanwhile, in behind the bicycle shed, Hercules Morse, as big as
                 a horse.
@@ -156,7 +156,7 @@ const Features = () => {
                   />
                 </svg>
               </div>
-              <p className="mb-2 font-bold">Paid Events</p>
+              <p className="mb-2 font-bold">Secure</p>
               <p className="text-sm leading-5 text-gray-900">
                 Disrupt inspire and think tank, social entrepreneur but
                 preliminary thinking think tank compelling.
@@ -181,7 +181,7 @@ const Features = () => {
                   />
                 </svg>
               </div>
-              <p className="mb-2 font-bold">Free Events</p>
+              <p className="mb-2 font-bold">Efficient Database Management System</p>
               <p className="text-sm leading-5 text-gray-900">
                 A business big enough that it could be listed on the NASDAQ goes
                 belly up.
@@ -206,7 +206,7 @@ const Features = () => {
                   />
                 </svg>
               </div>
-              <p className="mb-2 font-bold">Informative Events</p>
+              <p className="mb-2 font-bold">Standardize and Streamline citizen services</p>
               <p className="text-sm leading-5 text-gray-900">
                 Lookout flogging bilge rat main sheet bilge water nipper fluke
                 to go on account heave down clap of thunder.
@@ -231,7 +231,7 @@ const Features = () => {
                   />
                 </svg>
               </div>
-              <p className="mb-2 font-bold">Business Events</p>
+              <p className="mb-2 font-bold">Tamper Resistant</p>
               <p className="text-sm leading-5 text-gray-900">
                 Webtwo ipsum orkut reddit meebo skype vimeo jajah spock empressr
                 zimbra, mobly napster.
