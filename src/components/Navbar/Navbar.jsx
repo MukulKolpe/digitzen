@@ -82,7 +82,7 @@ export const Nav = () => {
               </Link>
             </li>
             <li>
-              {!address && (
+              {!address && !userInfo && (
                 <li>
                   <Link
                     to="/login"
@@ -123,7 +123,7 @@ export const Nav = () => {
                     <motion.img
                       style={{ cursor: "pointer" }}
                       whileTap={{ scale: 0.98 }}
-                      src={userInfo.profileImage === null ? userInfo.profileImage : "https://cdn.vectorstock.com/i/preview-1x/15/32/colorful-profile-picture-placeholder-icon-vector-42411532.webp" }
+                      src={userInfo.profileImage != null ? userInfo.profileImage : "https://cdn.vectorstock.com/i/preview-1x/15/32/colorful-profile-picture-placeholder-icon-vector-42411532.webp" }
                       className="w-10 min-w-[40px] h-10 min-h-[40px] shadow-2xl rounded-full object-contain"
                       alt="Profile"
                       onClick={handleClick}
@@ -234,26 +234,43 @@ export const Nav = () => {
                           Home
                         </Link>
                       </li>
-                      <li>
-                        <Link
-                          to="/upload"
-                          aria-label="Our product"
-                          title="Our product"
-                          class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                          Upload Documents
-                        </Link>
+                      {!address && !userInfo && (
+                        <li>
+                            <Link
+                              to="/login"
+                              aria-label="Our product"
+                              title="Our product"
+                              class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            >
+                              Login
+                            </Link> 
+                        </li>
+                      )}
+                      {userInfo && address && (
+                        <li>
+                          <Link
+                            to="/upload"
+                            aria-label="Our product"
+                            title="Our product"
+                            class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          >
+                            Upload Documents
+                          </Link> 
                       </li>
-                      <li>
-                        <Link
-                          to="/view"
-                          aria-label="Product pricing"
-                          title="Product pricing"
-                          class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                          View Documents
-                        </Link>
+                      )}
+                      {userInfo && address && (
+                        <li>
+                          <Link
+                            to="/view"
+                            aria-label="Product pricing"
+                            title="Product pricing"
+                            class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          >
+                            View Documents
+                          </Link>
                       </li>
+                      )}
+                      
                     </ul>
                   </nav>
                 </div>

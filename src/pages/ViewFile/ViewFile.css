@@ -21,3 +21,9 @@
     cursor: pointer;
 }
 
+
+.cardInfo{
+    width: 50%;
+    margin-left: 0px;
+    padding: 1.5rem;
+}
