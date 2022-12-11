@@ -58,15 +58,31 @@ const ViewFile = () => {
           Copy your Wallet Address
         </label>
         <div className="text-clipboard">
-          <text name="saAdress" id="saAdress" className="saAdress">
-            {selectedAccount.smartAccountAddress}
+          {(selectedAccount) ? (
+            <text name="saAdress" id="saAdress" className="saAdress">
+              {selectedAccount.smartAccountAddress}
           </text>
-          <CopyToClipboard
-            text={selectedAccount.smartAccountAddress}
-            onCopy={() => info()}
-          >
+          ) : (
+            <text name="saAdress" id="saAdress" className="saAdress">
+              Please login to view your documents
+          </text>
+          )}
+          {(selectedAccount) ? (
+            <CopyToClipboard
+              text={selectedAccount.smartAccountAddress}
+              onCopy={() => info()}
+            >
             <ContentCopyIcon />
           </CopyToClipboard>
+          ) : (
+            <CopyToClipboard
+              text="Please login to view your documents"
+              onCopy={() => info()}
+            >
+            <ContentCopyIcon />
+          </CopyToClipboard>
+          )}
+          
         </div>
       </div>
       <form className="form">
@@ -82,7 +98,7 @@ const ViewFile = () => {
         <button className="button" type="button" onClick={getDocuments}>
           View
         </button>
-        {nfts.map((nft) => (
+        {(nfts) != null ? (nfts.map((nft) => (
           <div className="w-100 grid grid-cols-2 md:grid-cols-1 py-4 mt-4 ml-0">
           <Card 
             title = {nft.metadata.name}
@@ -91,7 +107,9 @@ const ViewFile = () => {
             contract_address={nft.metadata.contract_address}
           />
         </div>
-        ))}
+        ))) : (
+          <div>Please login to view your documents</div>
+        )}
       </form>
       <ToastContainer />
     </div>
