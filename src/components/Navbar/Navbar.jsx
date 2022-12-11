@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { useSmartAccountContext } from "../../contexts/SmartAccountContext";
 import { useWeb3AuthContext } from "../../contexts/SocialLoginContext";
 import { motion } from "framer-motion";
+import { FaTimes } from "react-icons/fa";
+import "./Navbar.css";
+
 export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -19,6 +22,17 @@ export const Nav = () => {
     loading: scwLoading,
     setSelectedAccount,
   } = useSmartAccountContext();
+
+  const [isShown, setIsShown] = useState(false);
+
+  const handleClick = (event) => {
+    setIsShown((current) => !current);
+    setIsShown(true);
+  };
+
+  const hideModel = (event) => {
+    setIsShown(false);
+  };
 
   if (!address) {
     console.log("user not signed in");
@@ -110,8 +124,28 @@ export const Nav = () => {
                       src={userInfo.profileImage}
                       className="w-10 min-w-[40px] h-10 min-h-[40px] shadow-2xl rounded-full object-contain"
                       alt="Profile"
+                      onClick={handleClick}
                     />
                   </li>
+                  {isShown && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.6 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.6 }}
+                      className="model w-40 shadow-xl bg-gray-900  rounded-lg flex flex-col absolute top-12 right-0"
+                    >
+                      <button
+                        className="nav-btn nav-close-btn"
+                        onClick={hideModel}
+                      >
+                        <FaTimes />
+                      </button>
+                      <span className="text">Welcome, {userInfo.name}👋</span>
+                      <button className="button" type="button">
+                        <Link to="/login">Logout</Link>
+                      </button>
+                    </motion.div>
+                  )}
                 </ul>
               )}
             </li>

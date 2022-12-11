@@ -1,0 +1,26 @@
+.model {
+    background-color: white;
+    position: fixed;
+    top: 10vh;
+    right: 12vh;
+    width: 17vw;
+    height: 18vh;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    padding: 15px;
+}
+.text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.nav-close-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+
+}
