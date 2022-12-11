@@ -39,6 +39,8 @@ export const Nav = () => {
   } else {
     console.log("User Signed in");
   }
+
+ 
   return (
     <div class="bg-gray-900">
       <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -121,7 +123,7 @@ export const Nav = () => {
                     <motion.img
                       style={{ cursor: "pointer" }}
                       whileTap={{ scale: 0.98 }}
-                      src={userInfo.profileImage}
+                      src={userInfo.profileImage === null ? userInfo.profileImage : "https://cdn.vectorstock.com/i/preview-1x/15/32/colorful-profile-picture-placeholder-icon-vector-42411532.webp" }
                       className="w-10 min-w-[40px] h-10 min-h-[40px] shadow-2xl rounded-full object-contain"
                       alt="Profile"
                       onClick={handleClick}
