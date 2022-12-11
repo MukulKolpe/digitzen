@@ -4,12 +4,20 @@ To design and develop a secure, decentralized, anonymous and tampered proof way 
 
 ## TechStack Used 🎯
 <li>React</li>
+<li>TailwindCSS</li>
 <li>NFT Port</li><li>Biconomy</li>
 <li>IPFS</li>
 
 ## Prerequisites ✅
 <li>NFTPort Account</li>
 <li>Nodejs Installed</li>
+<li>Biconomy</li>
+
+## Packages Used :open_file_folder:
+<li>react-router-dom</li>
+<li>framer motions</li>
+<li>react-copy-to-clipboard</li>
+<li>react-toastify</li>
 
 ## Local Setup 🚧
 1. Create a NFT Account.
@@ -31,5 +39,7 @@ https://github.com/[your_github_username]/digitzen.git
  ```
  yarn start
  ```
+ 
+ ### Do drop a :star: if you find this repository useful . 
 
 
