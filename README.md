@@ -8,7 +8,7 @@ To design and develop a secure, decentralized, anonymous and tampered proof way 
 <li>IPFS</li>
 
 ## Prerequisites ✅
-<li>NFT Account</li>
+<li>NFTPort Account</li>
 <li>Nodejs Installed</li>
 
 ## Local Setup 🚧
