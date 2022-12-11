@@ -44,7 +44,7 @@ const LoginPage = () => {
               setSelectedAccount(null);
               disconnect();
             },
-        title: !address ? "Connect Wallet" : "Disconnect Wallet",
+        title: !address ? "Connect Wallet" : "Disconnect Wallet to Logout",
       }),
       eoaLoading && React.createElement("h2", null, "Loading EOA..."),
       address &&
@@ -68,27 +68,6 @@ const LoginPage = () => {
         React.createElement(Button, {
           onClickFunc: () => getUserInfo() && navigate("/upload"),
           title: "Upload Documents",
-        }),
-      userInfo &&
-        React.createElement(
-          "div",
-          { style: { maxWidth: 800, wordBreak: "break-all" } },
-          React.createElement("h2", null, "Organizer Info"),
-          React.createElement("image", userInfo.profileImage),
-          React.createElement(
-            "pre",
-            { style: { whiteSpace: "pre-wrap" } },
-            userInfo.name
-          ),
-          React.createElement(
-            "pre",
-            { style: { whiteSpace: "pre-wrap" } },
-            userInfo.email
-          )
-        ),
-      userInfo &&
-        React.createElement("div", {
-          style: { maxWidth: 800, wordBreak: "break-all" },
         })
     )
   );
