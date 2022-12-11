@@ -1,6 +1,6 @@
-# digitzen 🧐
+# DigitZen 🧐
 ## Objective :fire:
-To design and develop a secure, decentralized, anonymous and tampered proof way of maintaining and verifying all essential identity-based documents such as Aadhar Card, PAN Card, Birth certificate, Marriage certificate and create a unique digital identity of a person
+To design and develop a secure, decentralized, anonymous and tampered proof way of maintaining and verifying all essential identity-based documents such as Aadhar Card, PAN Card, Birth certificate, Marriage certificate and create a unique digital identity of a person.
 
 ## TechStack Used 🎯
 <li>React</li>
@@ -20,10 +20,10 @@ To design and develop a secure, decentralized, anonymous and tampered proof way 
 <li>react-toastify</li>
 
 ## Local Setup 🚧
-1. Create a NFT Account.
+1. Create a NFTPort Account.
 2. Generate the API key.
-3. Fork the repo
-4. Clone the repo
+3. Fork the repo.
+4. Clone the repo.
 ```
 https://github.com/[your_github_username]/digitzen.git
 ```
