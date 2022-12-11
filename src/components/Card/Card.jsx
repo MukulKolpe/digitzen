@@ -6,7 +6,7 @@ import "./Card.css"
 const Card = ({title,description,imageUrl}) => {
   const [showModal, setShowModal] = useState(false);
   return (
-    <div className="grid mx-10 gap-8 lg:max-w-full rounded-lg">
+    <div className="grid mx-10 gap-8 lg:max-w-full rounded-lg w-4/5 mr-4 md:w-100 md:m-auto">
     <div class="flex justify-center">
     <div class="rounded-lg shadow-lg bg-white max-w-sm">
       <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
@@ -24,7 +24,7 @@ const Card = ({title,description,imageUrl}) => {
         {showModal ? (
           <>
             <div
-              className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+              className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none w-4/5 ml-9 md:w-100 md:m-auto"
             >
               <div className="relative w-auto my-6 mx-auto max-w-3xl">
                 {/*content*/}
